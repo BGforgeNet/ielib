@@ -5,6 +5,7 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
+  cleanUrls: true,
   title: "BGforge IElib",
   description: "IElib documentation",
 
