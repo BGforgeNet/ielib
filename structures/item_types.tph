@@ -1,72 +1,144 @@
+/** Books/misc */
 OUTER_SET ITEM_TYPE_misc = 0x00
+/** Amulets and necklaces */
 OUTER_SET ITEM_TYPE_amulet = 0x01
+/** Armor */
 OUTER_SET ITEM_TYPE_armor = 0x02
+/** Belts and girdles */
 OUTER_SET ITEM_TYPE_belt = 0x03
+/** Boots */
 OUTER_SET ITEM_TYPE_boots = 0x04
+/** Arrows */
 OUTER_SET ITEM_TYPE_arrow = 0x05
+/** Bracers and gauntlets */
 OUTER_SET ITEM_TYPE_bracers = 0x06
+/** Headgear (helms, hats, and other head-wear) */
 OUTER_SET ITEM_TYPE_helm = 0x07
+/** Keys (not in Icewind Dale?) */
 OUTER_SET ITEM_TYPE_key = 0x08
+/** Potions */
 OUTER_SET ITEM_TYPE_potion = 0x09
+/** Rings */
 OUTER_SET ITEM_TYPE_ring = 0x0a
+/** Scrolls */
 OUTER_SET ITEM_TYPE_scroll = 0x0b
+/** Shields (not in IWD) */
 OUTER_SET ITEM_TYPE_shield = 0x0c
+/** Food */
 OUTER_SET ITEM_TYPE_food = 0x0d
+/** Bullets (for a sling) */
 OUTER_SET ITEM_TYPE_bullet = 0x0e
+/** Bows */
 OUTER_SET ITEM_TYPE_bow = 0x0f
+/** Daggers */
 OUTER_SET ITEM_TYPE_dagger = 0x10
+/** Maces (in BG, this includes clubs) */
 OUTER_SET ITEM_TYPE_mace = 0x11
+/** Slings */
 OUTER_SET ITEM_TYPE_sling = 0x12
+/** Small swords */
 OUTER_SET ITEM_TYPE_small_sword = 0x13
+/** Large swords */
 OUTER_SET ITEM_TYPE_large_sword = 0x14
+/** Hammers */
 OUTER_SET ITEM_TYPE_hammer = 0x15
+/** Morning stars */
 OUTER_SET ITEM_TYPE_morning_star = 0x16
+/** Flails */
 OUTER_SET ITEM_TYPE_flail = 0x17
+/** Darts */
 OUTER_SET ITEM_TYPE_dart = 0x18
+/** Axes (specifically, 1-handed axes -- halberds and 2-handed polearms not included) */
 OUTER_SET ITEM_TYPE_axe = 0x19
+/** Quarterstaff */
 OUTER_SET ITEM_TYPE_quarterstaff = 0x1a
+/** Crossbow */
 OUTER_SET ITEM_TYPE_crossbow = 0x1b
+/** Hand-to-hand weapons (fist, fist irons, punch daggers, etc) */
 OUTER_SET ITEM_TYPE_hand_to_hand = 0x1c
+/** Spears */
 OUTER_SET ITEM_TYPE_spear = 0x1d
+/** Halberds (2-handed polearms) */
 OUTER_SET ITEM_TYPE_halberd = 0x1e
+/** Crossbow bolts */
 OUTER_SET ITEM_TYPE_bolt = 0x1f
+/** Cloaks and robes */
 OUTER_SET ITEM_TYPE_cloak = 0x20
+/** Gold pieces (not an inventory item, but can appear as "monster dropped" treasure) */
 OUTER_SET ITEM_TYPE_gold_piece = 0x21
+/** Gems */
 OUTER_SET ITEM_TYPE_gem = 0x22
+/** Wands */
 OUTER_SET ITEM_TYPE_wand = 0x23
+/** Containers/eye/broken armor */
 OUTER_SET ITEM_TYPE_container = 0x24
+/** Containers/eye/broken armor */
 OUTER_SET ITEM_TYPE_eye = 0x24
+/** Containers/eye/broken armor */
 OUTER_SET ITEM_TYPE_broken_armor = 0x24
+/** Books/broken shields/bracelets */
 OUTER_SET ITEM_TYPE_book = 0x25
+/** Books/broken shields/bracelets */
 OUTER_SET ITEM_TYPE_broken_shield = 0x25
+/** Books/broken shields/bracelets */
 OUTER_SET ITEM_TYPE_bracelet = 0x25
+/** Familiars/broken swords/earrings */
 OUTER_SET ITEM_TYPE_familiar = 0x26
+/** Familiars/broken swords/earrings */
 OUTER_SET ITEM_TYPE_broken_sword = 0x26
+/** Familiars/broken swords/earrings */
 OUTER_SET ITEM_TYPE_earring = 0x26
+/** Tattoos (PST) */
 OUTER_SET ITEM_TYPE_tattoo = 0x27
+/** Lenses (PST) */
 OUTER_SET ITEM_TYPE_lenses = 0x28
+/** Bucklers/teeth */
 OUTER_SET ITEM_TYPE_buckler = 0x29
+/** Bucklers/teeth */
 OUTER_SET ITEM_TYPE_teeth = 0x29
+/** Candles */
 OUTER_SET ITEM_TYPE_candles = 0x2a
+/** Clubs (IWD) */
 OUTER_SET ITEM_TYPE_clubs_iwd = 0x2c
+/** Large Shields (IWD) */
 OUTER_SET ITEM_TYPE_large_shield_iwd = 0x2f
+/** Medium Shields (IWD) */
 OUTER_SET ITEM_TYPE_medium_shield_iwd = 0x31
+/** Notes */
 OUTER_SET ITEM_TYPE_notes = 0x32
-OUTER_SET ITEM_TYPE_small_shied_iwd = 0x35
+/** Small Shields (IWD) */
+OUTER_SET ITEM_TYPE_small_shield_iwd = 0x35
+/** Telescopes (IWD) */
 OUTER_SET ITEM_TYPE_telescope_iwd = 0x37
+/** Drinks (IWD) */
 OUTER_SET ITEM_TYPE_drink_iwd = 0x38
+/** Great Swords (IWD) */
 OUTER_SET ITEM_TYPE_great_sword_iwd = 0x39
+/** Fur/pelt */
 OUTER_SET ITEM_TYPE_pelt = 0x3b
+/** Leather Armor */
 OUTER_SET ITEM_TYPE_leather_armor = 0x3c
+/** Studded Leather Armor */
 OUTER_SET ITEM_TYPE_studded_leather = 0x3d
+/** Chain Mail */
 OUTER_SET ITEM_TYPE_chain_mail = 0x3e
+/** Splint Mail */
 OUTER_SET ITEM_TYPE_splint_mail = 0x3f
+/** Half Plate */
 OUTER_SET ITEM_TYPE_plate_mail = 0x40
+/** Full Plate */
 OUTER_SET ITEM_TYPE_full_plate = 0x41
+/** Hide Armor */
 OUTER_SET ITEM_TYPE_hide_armor = 0x42
+/** Robe */
 OUTER_SET ITEM_TYPE_robe = 0x43
+/** Bastard Sword */
 OUTER_SET ITEM_TYPE_bastard_sword = 0x45
+/** Scarf */
 OUTER_SET ITEM_TYPE_scarf = 0x46
+/** Food (IWD2) */
 OUTER_SET ITEM_TYPE_food_iwd2 = 0x47
+/** Hat */
 OUTER_SET ITEM_TYPE_hat = 0x48
+/** Gauntlet */
 OUTER_SET ITEM_TYPE_gauntlet = 0x49
