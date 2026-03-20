@@ -1,7 +1,14 @@
+/** @type {resref} */
 OUTER_SPRINT SCROLL_protection_from_acid ~scrl03~
+/** @type {resref} */
 OUTER_SPRINT SCROLL_protection_from_cold ~scrl04~
+/** @type {resref} */
 OUTER_SPRINT SCROLL_protection_from_electricity ~scrl05~
+/** @type {resref} */
 OUTER_SPRINT SCROLL_protection_from_fire ~scrl06~
+/** @type {resref} */
 OUTER_SPRINT SCROLL_protection_from_magic ~scrl07~
+/** @type {resref} */
 OUTER_SPRINT SCROLL_protection_from_poison ~scrl08~
+/** @type {resref} */
 OUTER_SPRINT SCROLL_protection_from_undead ~scrl09~
