@@ -1,11 +1,11 @@
 /**
- * @type word
+ * @type {word offset}
  * Effect type
  */
 OUTER_SET EFF_effect_type = 0x0
 
 /**
- * @type byte
+ * @type {byte offset}
  * **[Target type](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x2)**
  * - 0 ⟶ None
  * - 1 ⟶ **[Self](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x2_1)**
@@ -45,25 +45,25 @@ OUTER_SET EFF_effect_type = 0x0
 OUTER_SET EFF_target = 0x2
 
 /**
- * @type byte
+ * @type {byte offset}
  * Power
  */
 OUTER_SET EFF_power = 0x3
 
 /**
- * @type dword
+ * @type {dword offset}
  * Parameter 1
  */
 OUTER_SET EFF_parameter1 = 0x4
 
 /**
- * @type dword
+ * @type {dword offset}
  * Parameter 2
  */
 OUTER_SET EFF_parameter2 = 0x8
 
 /**
- * @type byte
+ * @type {byte offset}
  * **[Timing mode](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0xC)**
  * - 0 ⟶ **[Instant/Limited](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0xC_0)**
  *   - This timing mode measures [`Duration`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0xE) in seconds.
@@ -118,7 +118,7 @@ OUTER_SET EFF_parameter2 = 0x8
 OUTER_SET EFF_timing_mode = 0xc
 
 /**
- * @type byte
+ * @type {byte offset}
  * **[Dispel / Resistance](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0xD)**
  * The default behaviour is that effects cannot be dispelled and ignore magic resistance.
  * - bit 0 ⟶ Can be dispelled, affected by magic resistance
@@ -133,20 +133,20 @@ OUTER_SET EFF_timing_mode = 0xc
 OUTER_SET EFF_resistance = 0xd
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Duration](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0xE)**
  * - This field is measured in seconds or ticks (1⁄15 second), depending on [`Timing mode`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0xC).
  */
 OUTER_SET EFF_duration = 0xe
 
 /**
- * @type byte
+ * @type {byte offset}
  * **[Probability 1](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x12)**
  */
 OUTER_SET EFF_probability1 = 0x12
 
 /**
- * @type byte
+ * @type {byte offset}
  * **[Probability 2](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x13)**
  * - The `BG1` engine treats probability as a single word, effects are applied in the range `0–probability`.
  * - Other engines treat probability as two values. When an event fires, a random number (let us denote it by `x`) in the `0–99` range is generated. If [`Probability1`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x12), the event fires.
@@ -158,13 +158,13 @@ OUTER_SET EFF_probability1 = 0x12
 OUTER_SET EFF_probability2 = 0x13
 
 /**
- * @type resref
+ * @type {resref offset}
  * **[Resref key](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_Resource)**
  */
 OUTER_SET EFF_resref_key = 0x14
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Dice Thrown / Maximum Level](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x1C)**
  * - When this field is non-zero, all opcodes except for [opcode #12](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op12), [opcode #17](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op17), [opcode #18](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op18), [opcode #218](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op218) (only when `parameter2=1`), [opcode #331](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op331), and [opcode #333](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op333), treat it as `Maximum Level`, meaning that only creatures whose level attribute is less than or equal to this value will be affected by the effect.
  * When this field is used as `Maximum Level`:
@@ -176,7 +176,7 @@ OUTER_SET EFF_resref_key = 0x14
 OUTER_SET EFF_dice_thrown = 0x1c
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Dice Sides / Minimum Level](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x20)**
  * - When this field is non-zero, all opcodes except for [opcode #12](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op12), [opcode #17](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op17), [opcode #18](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op18), [opcode #218](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op218) (only when `parameter2=1`), [opcode #331](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op331), and [opcode #333](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op333), treat it as `Minimum Level`, meaning that only creatures whose level attribute is greater than or equal to this value will be affected by the effect.
  * When this field is used as `Minimum Level`:
@@ -188,7 +188,7 @@ OUTER_SET EFF_dice_thrown = 0x1c
 OUTER_SET EFF_dice_sides = 0x20
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Saving throw type](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x24)**
  * - bit 0 ⟶ **[Spells](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x24_BIT0)**
  * - bit 1 ⟶ **[Breath](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x24_BIT1)**
@@ -224,7 +224,7 @@ OUTER_SET EFF_dice_sides = 0x20
 OUTER_SET EFF_save_type = 0x24
 
 /**
- * @type dword
+ * @type {dword offset}
  * Saving throw bonus
  */
 OUTER_SET EFF_save_bonus = 0x28

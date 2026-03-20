@@ -1,5 +1,5 @@
 /**
- * @type char
+ * @type {char offset}
  * **[Attack type](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x0)**
  * - 0 ⟶ None
  * - 1 ⟶ **[Melee](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x0_1)**
@@ -31,7 +31,7 @@
 OUTER_SET ITM_HEAD_attack_type = 0x0
 
 /**
- * @type char
+ * @type {char offset}
  * ID Req.
  * - bit 0 ⟶ ID Required
  * - bit 1 ⟶ Non-ID Required
@@ -39,7 +39,7 @@ OUTER_SET ITM_HEAD_attack_type = 0x0
 OUTER_SET ITM_HEAD_id_required = 0x1
 
 /**
- * @type char
+ * @type {char offset}
  * **[Location](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x2)**
  * - 0 ⟶ None
  *   - Ability will not be selectable through the UI (but still available to scripts and spell-casting opcodes).
@@ -57,19 +57,19 @@ OUTER_SET ITM_HEAD_id_required = 0x1
 OUTER_SET ITM_HEAD_location = 0x2
 
 /**
- * @type char
+ * @type {char offset}
  * Alternative dice sides
  */
 OUTER_SET ITM_HEAD_alt_dice_sides = 0x3
 
 /**
- * @type resref
+ * @type {resref offset}
  * Use icon
  */
 OUTER_SET ITM_HEAD_use_icon = 0x4
 
 /**
- * @type char
+ * @type {char offset}
  * **[Target type](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0xC)**
  * - 0 ⟶ Invalid (cannot be selected)
  * - 1 ⟶ **[Living actor](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0xC_1)**
@@ -95,7 +95,7 @@ OUTER_SET ITM_HEAD_use_icon = 0x4
 OUTER_SET ITM_HEAD_target = 0xc
 
 /**
- * @type char
+ * @type {char offset}
  * **[Target count](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0xD)**
  * - Only usable by [`Item`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x2_3) abilities, and only with Ability Targets [`1`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0xC_1), [`3`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0xC_3), or [`4`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0xC_4).
  * - Targeting reticle will display amount remaining while selecting targets.
@@ -107,13 +107,13 @@ OUTER_SET ITM_HEAD_target = 0xc
 OUTER_SET ITM_HEAD_target_count = 0xd
 
 /**
- * @type word
+ * @type {word offset}
  * **[Range](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0xE)**
  */
 OUTER_SET ITM_HEAD_range = 0xe
 
 /**
- * @type byte
+ * @type {byte offset}
  * **[Launcher required](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x10)**
  * - 0 ⟶ None
  * - 1 ⟶ **[Bow](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x10_1)**
@@ -136,26 +136,26 @@ OUTER_SET ITM_HEAD_range = 0xe
 OUTER_SET ITM_HEAD_projectile_type = 0x10
 
 /**
- * @type byte
+ * @type {byte offset}
  * Alternative dice thrown
  */
 OUTER_SET ITM_HEAD_alt_dice_thrown = 0x11
 
 /**
- * @type byte
+ * @type {byte offset}
  * **[Speed Factor](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_SpeedFactor)**
  * - See [opcode #190](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op190).
  */
 OUTER_SET ITM_HEAD_speed = 0x12
 
 /**
- * @type byte
+ * @type {byte offset}
  * Alternative damage bonus
  */
 OUTER_SET ITM_HEAD_alt_damage_bonus = 0x13
 
 /**
- * @type word
+ * @type {word offset}
  * THAC0 bonus
  * A successful hit will always occur if any of the conditions below is true
  * - This field is set to `32767`.
@@ -165,39 +165,39 @@ OUTER_SET ITM_HEAD_alt_damage_bonus = 0x13
 OUTER_SET ITM_HEAD_thac0_bonus = 0x14
 
 /**
- * @type byte
+ * @type {byte offset}
  * **[Dice sides](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x16)**
  */
 OUTER_SET ITM_HEAD_dice_sides = 0x16
 
 /**
- * @type byte
+ * @type {byte offset}
  * **[Primary Type (School)](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x17)**
  * - See [`MSCHOOL.2DA`](https://gibberlings3.github.io/iesdp/files/2da/2da_bgee/mschool.htm).
  */
 OUTER_SET ITM_HEAD_primary_type = 0x17
 
 /**
- * @type byte
+ * @type {byte offset}
  * **[Dice thrown](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x18)**
  */
 OUTER_SET ITM_HEAD_dice_thrown = 0x18
 
 /**
- * @type byte
+ * @type {byte offset}
  * **[Secondary Type](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x19)**
  * - See [`MSECTYPE.2DA`](https://gibberlings3.github.io/iesdp/files/2da/2da_bgee/msectype.htm).
  */
 OUTER_SET ITM_HEAD_secondary_type = 0x19
 
 /**
- * @type word
+ * @type {word offset}
  * **[Damage bonus](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x1A)**
  */
 OUTER_SET ITM_HEAD_damage_bonus = 0x1a
 
 /**
- * @type word
+ * @type {word offset}
  * **[Damage type](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x1C)**
  * - 0 ⟶ **[None](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x1C_0)**
  *   - Deals Crushing damage, uses base AC (ignores all 4 specific AC).
@@ -232,25 +232,25 @@ OUTER_SET ITM_HEAD_damage_bonus = 0x1a
 OUTER_SET ITM_HEAD_damage_type = 0x1c
 
 /**
- * @type word
+ * @type {word offset}
  * Count of feature blocks
  */
 OUTER_SET ITM_HEAD_feature_block_count = 0x1e
 
 /**
- * @type word
+ * @type {word offset}
  * Index into feature blocks
  */
 OUTER_SET ITM_HEAD_feature_block_index = 0x20
 
 /**
- * @type word
+ * @type {word offset}
  * **[Max Charges](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x22)**
  */
 OUTER_SET ITM_HEAD_max_charges = 0x22
 
 /**
- * @type word
+ * @type {word offset}
  * **[Charge depletion behaviour](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x24)**
  * - 0 ⟶ **[Item remains](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x24_0)**
  *   - Item becomes unusable (except as a weapon) when [`Max Charges`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x22) reaches zero. Can be recharged by selling or by resting if it has the [`Recharge after resting`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#ExtHeader_Flags_BIT11) flag.
@@ -266,19 +266,19 @@ OUTER_SET ITM_HEAD_max_charges = 0x22
 OUTER_SET ITM_HEAD_depletion = 0x24
 
 /**
- * @type dword
+ * @type {dword offset}
  * [Flags](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#ExtHeader_Flags)
  */
 OUTER_SET ITM_HEAD_flags = 0x26
 
 /**
- * @type word
+ * @type {word offset}
  * **[Projectile Animation](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x2A)** (projectl.ids/missile.ids)
  */
 OUTER_SET ITM_HEAD_projectile_animation = 0x2a
 
 /**
- * @type word
+ * @type {word offset}
  * **[Melee animation](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#ExtendedHeader_MeleeAnimation)**
  * - It should total 100, but not mandatory on EE games.
  * - Not needed if [`Arrow`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x32)/[`Bolt`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x34)/[`Bullet`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x36) is used.
@@ -301,7 +301,7 @@ OUTER_SET ITM_HEAD_projectile_animation = 0x2a
 OUTER_SET ITM_HEAD_melee_animation = 0x2c
 
 /**
- * @type word
+ * @type {word offset}
  * **[Arrow qualifier / Is arrow?](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x32)**
  * - 0 ⟶ No
  * - 1 ⟶ Yes
@@ -311,7 +311,7 @@ OUTER_SET ITM_HEAD_melee_animation = 0x2c
 OUTER_SET ITM_HEAD_is_arrow = 0x32
 
 /**
- * @type word
+ * @type {word offset}
  * **[Bolt qualifier / Is bolt?](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x34)**
  * - 0 ⟶ No
  * - 1 ⟶ Yes
@@ -321,7 +321,7 @@ OUTER_SET ITM_HEAD_is_arrow = 0x32
 OUTER_SET ITM_HEAD_is_bolt = 0x34
 
 /**
- * @type word
+ * @type {word offset}
  * **[Bullet qualifier / Is bullet?](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Extended_Header_0x36)**
  * - 0 ⟶ No
  * - 1 ⟶ Yes
@@ -331,31 +331,31 @@ OUTER_SET ITM_HEAD_is_bolt = 0x34
 OUTER_SET ITM_HEAD_is_bullet = 0x36
 
 /**
- * @type char array
+ * @type {char array offset}
  * Signature ('ITM ')
  */
 OUTER_SET ITM_signature = 0x0
 
 /**
- * @type char array
+ * @type {char array offset}
  * Version ('V1  ')
  */
 OUTER_SET ITM_version = 0x4
 
 /**
- * @type strref
+ * @type {strref offset}
  * Unidentified Name (strref)
  */
 OUTER_SET ITM_unidentified_name = 0x8
 
 /**
- * @type strref
+ * @type {strref offset}
  * Identified Name (strref)
  */
 OUTER_SET ITM_identified_name = 0xc
 
 /**
- * @type resref
+ * @type {resref offset}
  * BG1, BG2, BGEE:
  * **[Replacement item](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Header_0x10)** (ITM)
  * PSTEE:
@@ -364,31 +364,31 @@ OUTER_SET ITM_identified_name = 0xc
 OUTER_SET ITM_replacement = 0x10
 
 /**
- * @type dword
+ * @type {dword offset}
  * [Flags](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#Header_Flags)
  */
 OUTER_SET ITM_flags = 0x18
 
 /**
- * @type word
+ * @type {word offset}
  * [Item type](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#Header_ItemType)
  */
 OUTER_SET ITM_type = 0x1c
 
 /**
- * @type byte
+ * @type {byte offset}
  * [Usability bitmask](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#Header_Usability)
  */
 OUTER_SET ITM_usability_flags = 0x1e
 
 /**
- * @type char array
+ * @type {char array offset}
  * [Item animation](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#Header_Animation)
  */
 OUTER_SET ITM_animation = 0x22
 
 /**
- * @type word
+ * @type {word offset}
  * **[Min Level](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Header_0x24)**
  * - Treated as average of all active class levels, rounded up.
  * - This field is basically the ITM counterpart of [`Level Required`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/spl_v1.htm#splv1_Extended_Header_0x10).
@@ -397,164 +397,164 @@ OUTER_SET ITM_animation = 0x22
 OUTER_SET ITM_min_level = 0x24
 
 /**
- * @type word
+ * @type {word offset}
  * Min Strength (unused in BG1)
  */
 OUTER_SET ITM_min_strength = 0x26
 
 /**
- * @type byte
+ * @type {byte offset}
  * Min Strength Bonus (unused in BG1)
  * Note: A strength of 19 or above is considered to have a Strength Bonus of 0, and would therefore not be able to equip any weapon with a Strength Bonus restriction.
  */
 OUTER_SET ITM_min_strength_bonus = 0x28
 
 /**
- * @type byte
+ * @type {byte offset}
  * [Kit Usability 1](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#Header_KitUsability)
  */
 OUTER_SET ITM_kit_usability1 = 0x29
 
 /**
- * @type byte
+ * @type {byte offset}
  * Min Intelligence (unused in BG1)
  */
 OUTER_SET ITM_min_intelligence = 0x2a
 
 /**
- * @type byte
+ * @type {byte offset}
  * [Kit Usability 2](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#Header_KitUsability)
  */
 OUTER_SET ITM_kit_usability2 = 0x2b
 
 /**
- * @type byte
+ * @type {byte offset}
  * Min Dexterity (unused in BG1)
  */
 OUTER_SET ITM_min_dexterity = 0x2c
 
 /**
- * @type byte
+ * @type {byte offset}
  * [Kit Usability 3](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#Header_KitUsability)
  */
 OUTER_SET ITM_kit_usability3 = 0x2d
 
 /**
- * @type byte
+ * @type {byte offset}
  * Min Wisdom (unused in BG1)
  */
 OUTER_SET ITM_min_wisdom = 0x2e
 
 /**
- * @type byte
+ * @type {byte offset}
  * [Kit Usability 4](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#Header_KitUsability)
  */
 OUTER_SET ITM_kit_usability4 = 0x2f
 
 /**
- * @type byte
+ * @type {byte offset}
  * Min Constitution (unused in BG1)
  */
 OUTER_SET ITM_min_constitution = 0x30
 
 /**
- * @type byte
+ * @type {byte offset}
  * [Weapon Proficiency](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#Header_Proficiency)
  */
 OUTER_SET ITM_weapon_proficiency = 0x31
 
 /**
- * @type word
+ * @type {word offset}
  * Min Charisma
  */
 OUTER_SET ITM_min_charisma = 0x32
 
 /**
- * @type dword
+ * @type {dword offset}
  * Price
  */
 OUTER_SET ITM_price = 0x34
 
 /**
- * @type word
+ * @type {word offset}
  * **[Stack amount](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Header_0x38)**
  */
 OUTER_SET ITM_stack_amount = 0x38
 
 /**
- * @type resref
+ * @type {resref offset}
  * Inventory icon (BAM)
  */
 OUTER_SET ITM_inventory_icon = 0x3a
 
 /**
- * @type word
+ * @type {word offset}
  * Lore to ID
  */
 OUTER_SET ITM_lore_to_id = 0x42
 
 /**
- * @type resref
+ * @type {resref offset}
  * **[Ground icon](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Header_0x44)** (BAM)
  */
 OUTER_SET ITM_ground_icon = 0x44
 
 /**
- * @type dword
+ * @type {dword offset}
  * Weight
  */
 OUTER_SET ITM_weight = 0x4c
 
 /**
- * @type strref
+ * @type {strref offset}
  * Unidentified Description (strref)
  */
 OUTER_SET ITM_unidentified_desc = 0x50
 
 /**
- * @type strref
+ * @type {strref offset}
  * Identified Description (strref)
  */
 OUTER_SET ITM_identified_desc = 0x54
 
 /**
- * @type resref
+ * @type {resref offset}
  * Description icon (BAM)
  */
 OUTER_SET ITM_description_icon = 0x58
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Enchantment](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#itmv1_Header_0x60)**
  */
 OUTER_SET ITM_enchantment = 0x60
 
 /**
- * @type dword
+ * @type {dword offset}
  * Offset to extended headers
  */
 OUTER_SET ITM_extended_headers_offset = 0x64
 
 /**
- * @type word
+ * @type {word offset}
  * Count of extended headers
  */
 OUTER_SET ITM_extended_headers_count = 0x68
 
 /**
- * @type dword
+ * @type {dword offset}
  * Offset to feature blocks
  */
 OUTER_SET ITM_feature_blocks_offset = 0x6a
 
 /**
- * @type word
+ * @type {word offset}
  * Index into equipping feature blocks
  */
 OUTER_SET ITM_feature_blocks_index = 0x6e
 
 /**
- * @type word
+ * @type {word offset}
  * Count of equipping feature blocks
  */
 OUTER_SET ITM_feature_blocks_count = 0x70

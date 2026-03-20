@@ -1,65 +1,65 @@
 /**
- * @type resref
+ * @type {resref offset}
  * Filename of SPL
  */
 OUTER_SET STO_CURE_spellname = 0x0
 
 /**
- * @type dword
+ * @type {dword offset}
  * Spell price
  */
 OUTER_SET STO_CURE_price = 0x8
 
 /**
- * @type resref
+ * @type {resref offset}
  * Rumour resource
  */
 OUTER_SET STO_DRINK_rumor = 0x0
 
 /**
- * @type strref
+ * @type {strref offset}
  * Drink name strref
  */
 OUTER_SET STO_DRINK_name = 0x8
 
 /**
- * @type dword
+ * @type {dword offset}
  * Drink price
  */
 OUTER_SET STO_DRINK_price = 0xc
 
 /**
- * @type dword
+ * @type {dword offset}
  * Alcoholic strength
  */
 OUTER_SET STO_DRINK_strength = 0x10
 
 /**
- * @type char array
+ * @type {char array offset}
  * Signature ('STOR')
  */
 OUTER_SET STO_signature = 0x0
 
 /**
- * @type char array
+ * @type {char array offset}
  * Version ('V1.0')
  */
 OUTER_SET STO_version = 0x4
 
 /**
- * @type dword
+ * @type {dword offset}
  * Type (0=Store, 1=Tavern, 2=Inn, 3=Temple, 5=Container)
  */
 OUTER_SET STO_type = 0x8
 
 /**
- * @type strref
+ * @type {strref offset}
  * name
  */
 OUTER_SET STO_name = 0xc
 
 /**
- * @type dword
+ * @type {dword offset}
  * Flags
  * - bit 0: User allowed to buy
  * - bit 1: User allowed to sell
@@ -81,103 +81,103 @@ OUTER_SET STO_name = 0xc
 OUTER_SET STO_flags = 0x10
 
 /**
- * @type dword
+ * @type {dword offset}
  * Store "sell price markup" (percentage of base price store charges for items)
  */
 OUTER_SET STO_sell_markup = 0x14
 
 /**
- * @type dword
+ * @type {dword offset}
  * Store "buy price markup" (percentage of base price store is willing to pay)
  */
 OUTER_SET STO_buy_markup = 0x18
 
 /**
- * @type dword
+ * @type {dword offset}
  * Depreciation rate
  */
 OUTER_SET STO_depreciation = 0x1c
 
 /**
- * @type word
+ * @type {word offset}
  * % chance of steal failure
  */
 OUTER_SET STO_chance_of_steal_failure = 0x20
 
 /**
- * @type word
+ * @type {word offset}
  * Capacity (0=unlimited)
  */
 OUTER_SET STO_capacity = 0x22
 
 /**
- * @type byte array
+ * @type {byte array offset}
  * Unknown
  */
 OUTER_SET STO_unknown = 0x78
 
 /**
- * @type dword
+ * @type {dword offset}
  * Offset to [items purchased](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/sto_v1.htm#storv1_0_Buy) section
  */
 OUTER_SET STO_buy_offset = 0x2c
 
 /**
- * @type dword
+ * @type {dword offset}
  * Count of items in [items purchased](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/sto_v1.htm#storv1_0_Buy) section
  */
 OUTER_SET STO_buy_count = 0x30
 
 /**
- * @type dword
+ * @type {dword offset}
  * Offset to [items for sale](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/sto_v1.htm#storv1_0_Sale) section
  */
 OUTER_SET STO_items_offset = 0x34
 
 /**
- * @type dword
+ * @type {dword offset}
  * Count of [items for sale](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/sto_v1.htm#storv1_0_Sale)
  */
 OUTER_SET STO_items_count = 0x38
 
 /**
- * @type dword
+ * @type {dword offset}
  * Lore
  */
 OUTER_SET STO_lore = 0x3c
 
 /**
- * @type dword
+ * @type {dword offset}
  * ID Price
  */
 OUTER_SET STO_identification_price = 0x40
 
 /**
- * @type resref
+ * @type {resref offset}
  * Rumours (Tavern)
  */
 OUTER_SET STO_rumors_tavern = 0x44
 
 /**
- * @type dword
+ * @type {dword offset}
  * Offset to [drinks](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/sto_v1.htm#storv1_0_Drink) section
  */
 OUTER_SET STO_drinks_offset = 0x4c
 
 /**
- * @type dword
+ * @type {dword offset}
  * Count of [drinks](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/sto_v1.htm#storv1_0_Drink)
  */
 OUTER_SET STO_drinks_counts = 0x50
 
 /**
- * @type resref
+ * @type {resref offset}
  * Rumours (Temple)
  */
 OUTER_SET STO_rumors_temple = 0x54
 
 /**
- * @type dword
+ * @type {dword offset}
  * Room flags
  * - bit 0: Peasant
  * - bit 1: Merchant
@@ -187,73 +187,73 @@ OUTER_SET STO_rumors_temple = 0x54
 OUTER_SET STO_room_flags = 0x5c
 
 /**
- * @type dword
+ * @type {dword offset}
  * Price of a peasant room
  */
 OUTER_SET STO_room_price_peasant = 0x60
 
 /**
- * @type dword
+ * @type {dword offset}
  * Price of a merchant room
  */
 OUTER_SET STO_room_price_merchant = 0x64
 
 /**
- * @type dword
+ * @type {dword offset}
  * Price of a noble room
  */
 OUTER_SET STO_room_price_noble = 0x68
 
 /**
- * @type dword
+ * @type {dword offset}
  * Price of a royal room
  */
 OUTER_SET STO_room_price_royal = 0x6c
 
 /**
- * @type dword
+ * @type {dword offset}
  * Offset to [cures](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/sto_v1.htm#storv1_0_Cure) section
  */
 OUTER_SET STO_cures_offset = 0x70
 
 /**
- * @type dword
+ * @type {dword offset}
  * Count of [cures](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/sto_v1.htm#storv1_0_Cure)
  */
 OUTER_SET STO_cures_count = 0x74
 
 /**
- * @type resref
+ * @type {resref offset}
  * Filename of ITM
  */
 OUTER_SET STO_ITEM_name = 0x0
 
 /**
- * @type word
+ * @type {word offset}
  * Item expiration time (replace with drained item)
  */
 OUTER_SET STO_ITEM_expiration_time = 0x8
 
 /**
- * @type word
+ * @type {word offset}
  * Quantity/Charges 1
  */
 OUTER_SET STO_ITEM_charges1 = 0xa
 
 /**
- * @type word
+ * @type {word offset}
  * Quantity/Charges 2
  */
 OUTER_SET STO_ITEM_charges2 = 0xc
 
 /**
- * @type word
+ * @type {word offset}
  * Quantity/Charges 3
  */
 OUTER_SET STO_ITEM_charges3 = 0xe
 
 /**
- * @type dword
+ * @type {dword offset}
  * Flags
  * - bit 0: Identified
  * - bit 1: Unstealable
@@ -263,13 +263,13 @@ OUTER_SET STO_ITEM_charges3 = 0xe
 OUTER_SET STO_ITEM_flags = 0x10
 
 /**
- * @type dword
+ * @type {dword offset}
  * Amount of this item in stock
  */
 OUTER_SET STO_ITEM_amount = 0x14
 
 /**
- * @type dword
+ * @type {dword offset}
  * Infinite supply flag (0=limited stock, 1=infinite stock)
  * Items with this flag set are automatically shown as identified
  */

@@ -1,11 +1,11 @@
 /**
- * @type word
+ * @type {word offset}
  * Opcode Number
  */
 OUTER_SET FX_opcode = 0x0
 
 /**
- * @type char
+ * @type {char offset}
  * **[Target type](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0x2)**
  * - 0 ⟶ None
  * - 1 ⟶ **[Self](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0x2_1)**
@@ -22,25 +22,25 @@ OUTER_SET FX_opcode = 0x0
 OUTER_SET FX_target = 0x2
 
 /**
- * @type char
+ * @type {char offset}
  * Power
  */
 OUTER_SET FX_power = 0x3
 
 /**
- * @type dword
+ * @type {dword offset}
  * Parameter 1
  */
 OUTER_SET FX_parameter1 = 0x4
 
 /**
- * @type dword
+ * @type {dword offset}
  * Parameter 2
  */
 OUTER_SET FX_parameter2 = 0x8
 
 /**
- * @type char
+ * @type {char offset}
  * **[Timing mode](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0xC)**
  * - 0 ⟶ **[Instant/Limited](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0xC_0)**
  * - 1 ⟶ **[Instant/Permanent](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0xC_1)**
@@ -59,7 +59,7 @@ OUTER_SET FX_parameter2 = 0x8
 OUTER_SET FX_timing = 0xc
 
 /**
- * @type char
+ * @type {char offset}
  * **[Dispel / Resistance](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0xD)**
  * The default behaviour is that effects cannot be dispelled and ignore magic resistance.
  * - bit 0 ⟶ Can be dispelled, affected by magic resistance
@@ -74,46 +74,46 @@ OUTER_SET FX_timing = 0xc
 OUTER_SET FX_resistance = 0xd
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Duration](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0xE)**
  */
 OUTER_SET FX_duration = 0xe
 
 /**
- * @type char
+ * @type {char offset}
  * **[Probability 1](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0x12)**
  */
 OUTER_SET FX_probability1 = 0x12
 
 /**
- * @type char
+ * @type {char offset}
  * **[Probability 2](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0x13)**
  * See [here](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x13) for further details.
  */
 OUTER_SET FX_probability2 = 0x13
 
 /**
- * @type resref
+ * @type {resref offset}
  * Resource
  */
 OUTER_SET FX_resource = 0x14
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Dice Thrown / Maximum Level](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0x1C)**
  * See [here](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x1C) for further details.
  */
 OUTER_SET FX_max_level = 0x1c
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Dice Sides / Minimum Level](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0x20)**
  * See [here](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x20) for further details.
  */
 OUTER_SET FX_min_level = 0x20
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Saving throw type](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0x24)**
  * - bit 0 ⟶ **[Spells](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0x24_BIT0)**
  * - bit 1 ⟶ **[Breath](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/itm_v1.htm#V1_Feature_Block_0x24_BIT1)**
@@ -132,13 +132,13 @@ OUTER_SET FX_min_level = 0x20
 OUTER_SET FX_save_type = 0x24
 
 /**
- * @type dword
+ * @type {dword offset}
  * Saving Throw Bonus
  */
 OUTER_SET FX_save_bonus = 0x28
 
 /**
- * @type dword
+ * @type {dword offset}
  * TobEx: Stacking ID. Checked when bit 25 of the Saving Throw Type is set.
  * If two effects of the same opcode are applied, both have Limit Effect Stacking bit set, and both have the same stacking ID, then the latter applied effect is suspended in application until the former effect expires. Regardless of whether it is applied, the latter effect will expire at the same time that it would expire if it was applied. In other words, the total duration of some non-stacking effect opcode is not extended because more than one copy of the effect was applied.
  * Stacking IDs are unique to the opcode being applied. To maintain uniqueness of stacking IDs between different mods, one recommendation is to use the higher word of Special as the modder's Infinity Engine Community Prefix, then use the lower word as an identifying ID. For example, 0x41360001 ('A6' 0x0001).

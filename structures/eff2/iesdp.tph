@@ -1,25 +1,25 @@
 /**
- * @type char array
+ * @type {char array offset}
  * External EFFs - the field is the same as the signature field from the header
  * [Embedded EFF](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/cre_v1.htm#CREV1_0_Header_0x33_1)s - this field is zeroed out
  */
 OUTER_SET EFF2_signature2 = 0x8
 
 /**
- * @type char array
+ * @type {char array offset}
  * External EFFs - the field is the same as the version field from the header
  * [Embedded EFF](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/cre_v1.htm#CREV1_0_Header_0x33_1)s - this field is zeroed out
  */
 OUTER_SET EFF2_version2 = 0xc
 
 /**
- * @type dword
+ * @type {dword offset}
  * Opcode number
  */
 OUTER_SET EFF2_opcode = 0x10
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Target type](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x14)**
  * - 0 ⟶ **[None](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x14_0)**
  * - 1 ⟶ **[Self](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x14_1)**
@@ -39,25 +39,25 @@ OUTER_SET EFF2_opcode = 0x10
 OUTER_SET EFF2_target = 0x14
 
 /**
- * @type dword
+ * @type {dword offset}
  * Power
  */
 OUTER_SET EFF2_power = 0x18
 
 /**
- * @type dword
+ * @type {dword offset}
  * Parameter 1
  */
 OUTER_SET EFF2_parameter1 = 0x1c
 
 /**
- * @type dword
+ * @type {dword offset}
  * Parameter 2
  */
 OUTER_SET EFF2_parameter2 = 0x20
 
 /**
- * @type word
+ * @type {word offset}
  * [**Timing mode**](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x24)
  * - 0 ⟶ [Instant/Limited](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0xC_0)
  * - 1 ⟶ [Instant/Permanent](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0xC_1)
@@ -79,7 +79,7 @@ OUTER_SET EFF2_parameter2 = 0x20
 OUTER_SET EFF2_timing = 0x24
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Duration](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x28)**
  * - This field is measured in seconds or ticks (1⁄15 second), depending on [`Timing mode`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x24).
  * If called via [opcode #177](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op177)/[opcode #183](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op183)/[opcode #283](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op283), this field is ignored.
@@ -87,14 +87,14 @@ OUTER_SET EFF2_timing = 0x24
 OUTER_SET EFF2_duration = 0x28
 
 /**
- * @type word
+ * @type {word offset}
  * **[Probability 1](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x2C)**
  * If called via [opcode #183](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op183), this field is ignored.
  */
 OUTER_SET EFF2_probability1 = 0x2c
 
 /**
- * @type word
+ * @type {word offset}
  * **[Probability 2](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x2E)**
  * See [here](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v1.htm#effv1_Header_0x13) for further details.
  * If called via [opcode #183](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op183), this field is ignored.
@@ -102,25 +102,25 @@ OUTER_SET EFF2_probability1 = 0x2c
 OUTER_SET EFF2_probability2 = 0x2e
 
 /**
- * @type resref
+ * @type {resref offset}
  * **[Resource](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_Resource)**
  */
 OUTER_SET EFF2_resource = 0x30
 
 /**
- * @type dword
+ * @type {dword offset}
  * Dice Thrown
  */
 OUTER_SET EFF2_dice_thrown = 0x38
 
 /**
- * @type dword
+ * @type {dword offset}
  * Dice Sides
  */
 OUTER_SET EFF2_dice_sides = 0x3c
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Saving throw type](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x40)**
  * - bit 0 ⟶ **[Spells](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x40_BIT0)**
  * - bit 1 ⟶ **[Breath](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x40_BIT1)**
@@ -150,14 +150,14 @@ OUTER_SET EFF2_dice_sides = 0x3c
 OUTER_SET EFF2_save_type = 0x40
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Save bonus](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x44)**
  * If called via [opcode #183](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op183), this field is ignored.
  */
 OUTER_SET EFF2_save_bonus = 0x44
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Special](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_Special)** (EE games)
  * TobEx: Stacking ID. Checked when bit 25 of the Saving Throw Type is set.
  * If two effects of the same opcode are applied, both have Limit Effect Stacking bit set, and both have the same stacking ID, then the latter applied effect is suspended in application until the former effect expires. Regardless of whether it is applied, the latter effect will expire at the same time that it would expire if it was applied. In other words, the total duration of some non-stacking effect opcode is not extended because more than one copy of the effect was applied.
@@ -166,14 +166,14 @@ OUTER_SET EFF2_save_bonus = 0x44
 OUTER_SET EFF2_stacking_id_tobex = 0x48
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Primary Type (School)](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x4C)**
  * - See [`MSCHOOL.2DA`](https://gibberlings3.github.io/iesdp/files/2da/2da_bgee/mschool.htm).
  */
 OUTER_SET EFF2_school = 0x4c
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Dispel/Resistance](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x5C)**
  * The default behaviour is that effects cannot be dispelled and ignore resistance.
  * - bit 0 ⟶ **[Dispel](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x5C_BIT0)**
@@ -220,68 +220,68 @@ OUTER_SET EFF2_school = 0x4c
 OUTER_SET EFF2_resistance = 0x5c
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Parameter 3](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x60)**
  */
 OUTER_SET EFF2_parameter3 = 0x60
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Parameter 4](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x64)**
  */
 OUTER_SET EFF2_parameter4 = 0x64
 
 /**
- * @type dword
+ * @type {dword offset}
  * Parameter 5
  */
 OUTER_SET EFF2_parameter5 = 0x68
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Time applied](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x6C)** (ticks)
  * - It stores the gametime (ticks) at which the effect was originally applied.
  */
 OUTER_SET EFF2_time_applied = 0x6c
 
 /**
- * @type resref
+ * @type {resref offset}
  * **[Resource 2](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x70)** ([VVC](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/vvc_v1.htm) in many effects)
  */
 OUTER_SET EFF2_resource2 = 0x70
 
 /**
- * @type resref
+ * @type {resref offset}
  * **[Resource 3](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x78)**
  */
 OUTER_SET EFF2_resource3 = 0x78
 
 /**
- * @type dword
+ * @type {dword offset}
  * Caster X coordinate
  */
 OUTER_SET EFF2_caster_x_coord = 0x80
 
 /**
- * @type dword
+ * @type {dword offset}
  * Caster Y coordinate
  */
 OUTER_SET EFF2_caster_y_coord = 0x84
 
 /**
- * @type dword
+ * @type {dword offset}
  * Target X coordinate
  */
 OUTER_SET EFF2_target_x_coord = 0x88
 
 /**
- * @type dword
+ * @type {dword offset}
  * Target Y coordinate
  */
 OUTER_SET EFF2_target_y_coord = 0x8c
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Parent resource type](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x90)**
  * - 0 ⟶ **[None](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x90_0)**
  * - 1 ⟶ **[Spell](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x90_1)**
@@ -290,7 +290,7 @@ OUTER_SET EFF2_target_y_coord = 0x8c
 OUTER_SET EFF2_parent_resource_type = 0x90
 
 /**
- * @type resref
+ * @type {resref offset}
  * **[Parent resource](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x94)**
  * This specific field always needs to be in **ALLCAPS**.
  * Be careful checking it in [Near Infinity](https://github.com/Argent77/NearInfinity), it displays `resource` fields in ALLCAPS regardless of the actual characters. However, it also always saves those fields in ALLCAPS as well.
@@ -302,7 +302,7 @@ OUTER_SET EFF2_parent_resource_type = 0x90
 OUTER_SET EFF2_parent_resource = 0x94
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Parent resource flags](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x9C)**
  * - bit 10 ⟶ **[Hostile](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x9C_BIT10)**
  * - bit 11 ⟶ No LOS required
@@ -315,38 +315,38 @@ OUTER_SET EFF2_parent_resource = 0x94
 OUTER_SET EFF2_parent_resource_flags = 0x9c
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Projectile](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0xA0)**
  */
 OUTER_SET EFF2_projectile = 0xa0
 
 /**
- * @type bytes
+ * @type {bytes offset}
  * **[Variable name](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0xA8)**
  */
 OUTER_SET EFF2_variable_name = 0xa8
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Caster level](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0xC8)**
  */
 OUTER_SET EFF2_caster_level = 0xc8
 
 /**
- * @type dword
+ * @type {dword offset}
  * **[Secondary Type](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0xD0)**
  * - See [`MSECTYPE.2DA`](https://gibberlings3.github.io/iesdp/files/2da/2da_bgee/msectype.htm).
  */
 OUTER_SET EFF2_sectype = 0xd0
 
 /**
- * @type char array
+ * @type {char array offset}
  * Signature ('EFF ')
  */
 OUTER_SET EFF2_signature = 0x0
 
 /**
- * @type char array
+ * @type {char array offset}
  * Version ('V2.0')
  */
 OUTER_SET EFF2_version = 0x4
