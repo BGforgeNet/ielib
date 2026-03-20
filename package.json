@@ -13,9 +13,9 @@
 	"dependencies": {
 		"gray-matter": "^4.0.3",
 		"js-yaml": "^4.1.1",
-		"jsdom": "^25.0.1",
+		"jsdom": "^29.0.1",
 		"tsx": "^4.21.0",
-		"yargs": "^17.7.2"
+		"yargs": "^18.0.0"
 	},
 	"devDependencies": {
 		"@types/js-yaml": "^4.0.9",
