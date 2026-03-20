@@ -29,7 +29,7 @@ IElib can be used standalone or with [BGforge MLS](https://github.com/BGforgeNet
     ```
     ALWAYS
       OUTER_SPRINT BGFORGE_LIB_DIR "%MOD_FOLDER%/lib/bgforge"
-      INCLUDE ~%BGFORGE_LIB_DIR%/main.tph~
+      INCLUDE ~%BGFORGE_LIB_DIR%/main.tpa~
     END
     ```
 3. Browse the code to see the available constants, use [BGforge MLS](https://github.com/BGforgeNet/VScode-BGforge-MLS) to get tips (completion and stuff).

@@ -4,8 +4,8 @@ title: Home
 
 hero:
   name: IElib
-  text: WeiDU Constant & Function Library
-  tagline: Named constants for opcodes, file offsets, IDS values, and helper functions for Infinity Engine modding.
+  text: WeiDU library for Infinity Engine modding.
+  tagline: Named constants for opcodes, file offsets, IDS values, and helper functions.
   image:
     src: /example.png
     alt: IElib example
@@ -16,6 +16,9 @@ hero:
     - theme: alt
       text: Functions
       link: /functions/2da
+    - theme: alt
+      text: Types
+      link: /types
 
 features:
   - title: Named Constants
@@ -23,7 +26,7 @@ features:
   - title: Helper Functions
     details: Ready-made WeiDU functions and macros for common modding tasks -- creatures, items, dialogs, and more.
   - title: MLS Integration
-    details: Designed for BGforge MLS, a VScode extension for WeiDU, IE script, and dialog file formats.
+    details: Can be used standalone or with <a href="https://github.com/BGforgeNet/VScode-BGforge-MLS">BGforge MLS</a>. MLS will pick up all of IElib's defines for intellisense.
 ---
 
 ## Usage
@@ -47,7 +50,7 @@ ALWAYS
 END
 ```
 
-Browse the code to see the available constants, use BGforge MLS to get tips (completion and stuff).
+Browse the code to see the available constants, use [BGforge MLS](https://github.com/BGforgeNet/VScode-BGforge-MLS) to get tips (completion and stuff).
 
 ### 3. Update
 
@@ -56,8 +59,3 @@ git submodule update --remote
 git add lib/bgforge
 git commit -m "updated BGforge IElib"
 ```
-
-## Questions and issues
-
-- Report bugs, suggest features, send pull requests to [GitHub](https://github.com/BGforgeNet/ielib).
-- Ask questions and discuss on the [forum](https://forums.bgforge.net/viewforum.php?f=35).
