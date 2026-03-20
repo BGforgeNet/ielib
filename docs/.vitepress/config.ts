@@ -77,7 +77,7 @@ _paq.push(['enableLinkTracking']);
       },
       {
         text: "GitHub",
-        link: "https://github.com/BGforgeNet/BGforge-MLS-IElib",
+        link: "https://github.com/BGforgeNet/ielib",
       },
       { text: "BGforge", link: "https://bgforge.net" },
     ],
@@ -108,7 +108,7 @@ _paq.push(['enableLinkTracking']);
 
     editLink: {
       pattern:
-        "https://github.com/BGforgeNet/BGforge-MLS-IElib/edit/master/docs/:path",
+        "https://github.com/BGforgeNet/ielib/edit/master/docs/:path",
     },
 
     search: {

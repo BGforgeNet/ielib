@@ -32,7 +32,7 @@ features:
 
 ```bash
 cd mymod
-git submodule add -b master https://github.com/BGforgeNet/BGforge-MLS-IElib.git lib/bgforge
+git submodule add -b master https://github.com/BGforgeNet/ielib.git lib/bgforge
 git commit -m "added BGforge IElib"
 ```
 
@@ -59,5 +59,5 @@ git commit -m "updated BGforge IElib"
 
 ## Questions and issues
 
-- Report bugs, suggest features, send pull requests to [GitHub](https://github.com/BGforgeNet/BGforge-MLS-IElib).
+- Report bugs, suggest features, send pull requests to [GitHub](https://github.com/BGforgeNet/ielib).
 - Ask questions and discuss on the [forum](https://forums.bgforge.net/viewforum.php?f=35).
