@@ -1,9 +1,8 @@
 external
-docs/_pages
 .vscode
-docs/.bundle
-docs/_site
-docs/vendor
 .venv
 node_modules/
-docs/_data/functions/
+docs/.vitepress/dist
+docs/.vitepress/cache
+docs/functions/
+docs/types.md

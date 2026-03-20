@@ -1,0 +1,85 @@
+/**
+ * Custom styles for IElib documentation.
+ * Covers function reference pages, tables, type badges, and required markers.
+ */
+
+/* Always show scrollbar to prevent layout shift between pages */
+html {
+  overflow-y: scroll;
+}
+
+/* -- Hero image: allow full width for wide screenshots -- */
+.VPHero .VPImage.image-src {
+  max-width: 100%;
+  max-height: none;
+}
+
+/* -- "required" marker in red -- */
+.vp-doc .required {
+  color: var(--vp-c-danger-1);
+  font-style: italic;
+}
+
+/* -- Function headings -- */
+.vp-doc h2 {
+  padding-top: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  border-top: 2px solid var(--vp-c-divider);
+}
+
+.vp-doc h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* Align badge within headings without disrupting anchor */
+.vp-doc h2 .VPBadge {
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-size: 0.5em;
+  letter-spacing: 0.05em;
+  border: none;
+}
+
+/* Monokai-colored badges: blue for action, green for patch */
+.vp-doc h2 .VPBadge.info {
+  background-color: #66d9ef;
+  color: #1a1a2e;
+}
+
+.vp-doc h2 .VPBadge.tip {
+  background-color: #a6e22e;
+  color: #1a1a2e;
+}
+
+/* -- Tables -- */
+.vp-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9em;
+}
+
+.vp-doc th {
+  background-color: var(--vp-c-bg-soft);
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.vp-doc td,
+.vp-doc th {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc tr:hover td {
+  background-color: var(--vp-c-bg-soft);
+}
+
+/* -- Hide markdown horizontal rules (headings provide separation) -- */
+.vp-doc hr {
+  margin: 0;
+  border: none;
+}

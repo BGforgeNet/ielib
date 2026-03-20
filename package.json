@@ -7,8 +7,8 @@
 		"typecheck": "tsc --noEmit",
 		"iesdp-update": "bash scripts/iesdp-update.sh",
 		"test": "vitest run",
-		"build-site": "tsx scripts/jsdoc-to-yaml.ts && cd docs && bundle install && bundle exec jekyll build",
-		"serve": "tsx scripts/jsdoc-to-yaml.ts && cd docs && bundle install && bundle exec jekyll serve"
+		"build-site": "tsx scripts/jsdoc-to-md.ts && pnpm exec vitepress build docs",
+		"serve": "tsx scripts/jsdoc-to-md.ts && pnpm exec vitepress dev docs"
 	},
 	"dependencies": {
 		"gray-matter": "^4.0.3",
@@ -24,6 +24,7 @@
 		"@types/yargs": "^17.0.35",
 		"oxlint": "^1.56.0",
 		"typescript": "^5.9.3",
+		"vitepress": "^1.6.4",
 		"vitest": "^4.1.0"
 	}
 }

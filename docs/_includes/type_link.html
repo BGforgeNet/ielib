@@ -1,2 +1,0 @@
-{%- assign known_types = "array,bool,ids,int,list,map,resref,filename,string" | split: "," -%}
-{%- if known_types contains include.type -%}<a href="/types/#{{ include.type }}">{{ include.type }}</a>{%- else -%}{{ include.type }}{%- endif -%}
