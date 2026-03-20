@@ -209,7 +209,7 @@ function formatStructureEntry(id: string, field: StructureField): string {
 
   const jsdocLines = [
     "/**",
-    ` * @type ${field.type}`,
+    ` * @type {${field.type} offset}`,
     ...descLines.map((line) => ` * ${line}`),
     " */",
   ];
