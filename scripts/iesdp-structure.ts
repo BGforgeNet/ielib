@@ -8,7 +8,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as yaml from "js-yaml";
-import { readFile, validateDirectory, log } from "./utils.js";
+import { readFile, validateDirectory, log, applyIdReplacements } from "./utils.js";
 import { htmlToMarkdown, stripAllMarkup } from "./iesdp-html-to-markdown.js";
 
 // Types
@@ -64,27 +64,6 @@ export const STRUCTURE_PREFIX_MAP: Readonly<Record<string, string>> = {
   body: "",
   extended_header: "head",
 };
-
-export const ID_REPLACEMENTS: Readonly<Record<string, string>> = {
-  "probability ": "probability",
-  "usability ": "usability",
-  "parameter ": "parameter",
-  "resource ": "resource",
-  alternative: "alt",
-  ".": "",
-  " ": "_",
-};
-
-/**
- * Applies ID_REPLACEMENTS to a string.
- */
-function applyIdReplacements(input: string): string {
-  let result = input;
-  for (const [from, to] of Object.entries(ID_REPLACEMENTS)) {
-    result = result.replaceAll(from, to);
-  }
-  return result;
-}
 
 /**
  * Generates the prefix for a structure constant.
@@ -183,7 +162,9 @@ export function loadDatafile(fpath: string, prefix: string, formatName: string):
 
   for (const item of data) {
     if (item.offset !== undefined && item.offset !== curOff) {
-      log(`Warning: offset mismatch in ${fpath}. Expected ${curOff}, got ${item.offset}`);
+      throw new ValidationError(
+        `Offset mismatch in ${fpath}: expected ${curOff}, got ${item.offset} (desc: "${item.desc}")`,
+      );
     }
 
     const size = getFieldSize(item);

@@ -7,7 +7,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as yaml from "js-yaml";
-import { readFile, log } from "./utils.js";
+import { readFile, log, applyIdReplacements } from "./utils.js";
 import { stripAllMarkup } from "./iesdp-html-to-markdown.js";
 import { ValidationError } from "./iesdp-structure.js";
 
@@ -20,28 +20,6 @@ export interface ItemTypeRaw {
 
 // Constants
 export const ITEM_TYPE_PREFIX = "ITEM_TYPE_";
-
-/** ID_REPLACEMENTS subset needed for item type ID generation. */
-const ID_REPLACEMENTS: Readonly<Record<string, string>> = {
-  "probability ": "probability",
-  "usability ": "usability",
-  "parameter ": "parameter",
-  "resource ": "resource",
-  alternative: "alt",
-  ".": "",
-  " ": "_",
-};
-
-/**
- * Applies ID_REPLACEMENTS to a string.
- */
-function applyIdReplacements(input: string): string {
-  let result = input;
-  for (const [from, to] of Object.entries(ID_REPLACEMENTS)) {
-    result = result.replaceAll(from, to);
-  }
-  return result;
-}
 
 /**
  * Validates that parsed YAML is an array of item type entries.

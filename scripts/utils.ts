@@ -30,3 +30,28 @@ export function validateDirectory(dirPath: string, description: string): void {
 export function log(message: string): void {
   process.stdout.write(`${message}\n`);
 }
+
+/**
+ * Replacements applied when generating constant IDs from IESDP descriptions.
+ * Order matters: longer prefixed replacements must come before shorter ones.
+ */
+export const ID_REPLACEMENTS: Readonly<Record<string, string>> = {
+  "probability ": "probability",
+  "usability ": "usability",
+  "parameter ": "parameter",
+  "resource ": "resource",
+  alternative: "alt",
+  ".": "",
+  " ": "_",
+};
+
+/**
+ * Applies ID_REPLACEMENTS to a string, producing a normalized constant ID fragment.
+ */
+export function applyIdReplacements(input: string): string {
+  let result = input;
+  for (const [from, to] of Object.entries(ID_REPLACEMENTS)) {
+    result = result.replaceAll(from, to);
+  }
+  return result;
+}

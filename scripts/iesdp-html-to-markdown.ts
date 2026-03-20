@@ -15,11 +15,11 @@ import { resolveIesdpUrl } from "./iesdp-url.js";
  */
 export function walkNode(node: Node, formatName: string, listDepth: number = 0): string {
   // Text node: return content as-is (whitespace handled per-element)
-  if (node.nodeType === 3) {
+  if (node.nodeType === node.TEXT_NODE) {
     return node.textContent ?? "";
   }
   // Skip non-element nodes (comments, etc.)
-  if (node.nodeType !== 1) {
+  if (node.nodeType !== node.ELEMENT_NODE) {
     return "";
   }
 
@@ -144,7 +144,7 @@ export function walkChildren(node: Node, formatName: string, listDepth: number):
 export function walkChildrenCollapsed(node: Node, formatName: string, listDepth: number): string {
   return Array.from(node.childNodes)
     .map((child) => {
-      if (child.nodeType === 3) {
+      if (child.nodeType === child.TEXT_NODE) {
         return (child.textContent ?? "").replace(/\s+/g, " ");
       }
       return walkNode(child, formatName, listDepth);

@@ -32,6 +32,12 @@ export const OPCODE_NAME_REPLACEMENTS: Readonly<Record<string, string>> = {
   high_level_ability: "HLA",
 };
 
+/**
+ * Opcode 175 shares the normalized name "hold" with opcode 109.
+ * The collision resolver would name it "hold_2", but the canonical name is "hold_graphic".
+ */
+export const HOLD_GRAPHIC_OPCODE = 175;
+
 export const OPCODE_PREFIX_STRIP: readonly string[] = [
   "item_",
   "graphics_",
@@ -177,8 +183,7 @@ export function generateOpcodeFile(iesdpDir: string, outputFile: string): void {
     }
     name = uniqueName;
 
-    // Special case: opcode 175 (hold and hold_graphic share the same name)
-    if (o.n === 175) {
+    if (o.n === HOLD_GRAPHIC_OPCODE) {
       name = "hold_graphic";
     }
 

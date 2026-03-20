@@ -115,6 +115,23 @@ export function paramToYaml(param: JsDocParam): YamlParam {
 }
 
 /**
+ * Pattern matching YAML values that need quoting: values starting with
+ * special indicators, or containing sequences that could be misinterpreted.
+ */
+const YAML_NEEDS_QUOTING = /^[#[{}&*!|>'"%@`\]]|: | #/;
+
+/**
+ * Escapes a scalar value for safe inline YAML emission.
+ * Quotes with double-quotes when the value contains YAML-significant characters.
+ */
+function yamlScalar(value: string): string {
+  if (YAML_NEEDS_QUOTING.test(value) || value.includes(": ") || value.includes(" #")) {
+    return `"${value.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
+  }
+  return value;
+}
+
+/**
  * Serializes a list of params into YAML lines.
  * Returns a new array of lines (pure function, no mutation).
  */
@@ -122,13 +139,13 @@ function serializeParams(label: string, params: readonly YamlParam[]): string[] 
   const lines: string[] = [`  ${label}:`];
   for (const param of params) {
     lines.push(`    - name: ${param.name}`);
-    lines.push(`      desc: ${param.desc}`);
+    lines.push(`      desc: ${yamlScalar(param.desc)}`);
     lines.push(`      type: ${param.type}`);
     if (param.required !== undefined) {
       lines.push(`      required: ${param.required}`);
     }
     if (param.default !== undefined) {
-      lines.push(`      default: ${param.default}`);
+      lines.push(`      default: ${yamlScalar(param.default)}`);
     }
   }
   return lines;
@@ -151,7 +168,7 @@ export function serializeYaml(functions: readonly YamlFunction[]): string {
         funcLines.push(`    ${line}`);
       }
     } else {
-      funcLines.push(`  desc: ${func.desc}`);
+      funcLines.push(`  desc: ${yamlScalar(func.desc)}`);
     }
 
     funcLines.push(`  type: ${func.type}`);
@@ -168,7 +185,7 @@ export function serializeYaml(functions: readonly YamlFunction[]): string {
       funcLines.push("  return:");
       for (const ret of func.return) {
         funcLines.push(`    - name: ${ret.name}`);
-        funcLines.push(`      desc: ${ret.desc}`);
+        funcLines.push(`      desc: ${yamlScalar(ret.desc)}`);
         funcLines.push(`      type: ${ret.type}`);
       }
     }

@@ -3,6 +3,7 @@
  */
 
 import { describe, it, expect } from "vitest";
+import * as yaml from "js-yaml";
 import { paramToYaml, serializeYaml, functionToYaml } from "./jsdoc-to-yaml";
 import type { JsDocParam, WeiduFunction } from "./weidu-jsdoc-parser";
 
@@ -147,6 +148,50 @@ describe("serializeYaml", () => {
     expect(result).toContain("      required: 1");
     expect(result).toContain("  return:");
     expect(result).toContain("    - name: result");
+  });
+
+  it("produces valid YAML when descriptions contain special characters", () => {
+    const functions = [
+      {
+        name: "TEST",
+        desc: "Sets value: the amount",
+        type: "patch",
+        int_params: [{ name: "x", desc: "param: value # comment", type: "int" }],
+        return: [{ name: "r", desc: "result [bracketed]", type: "int" }],
+      },
+    ];
+    const result = serializeYaml(functions);
+    // Must be parseable as valid YAML
+    const parsed = yaml.load(result) as Record<string, unknown>[];
+    expect(parsed).toHaveLength(1);
+    expect(parsed[0]).toHaveProperty("name", "TEST");
+    expect(parsed[0]).toHaveProperty("desc", "Sets value: the amount");
+  });
+
+  it("produces valid YAML when description starts with YAML-significant chars", () => {
+    const functions = [
+      {
+        name: "TEST",
+        desc: "# not a comment",
+        type: "patch",
+      },
+      {
+        name: "TEST2",
+        desc: "[bracketed] value",
+        type: "action",
+      },
+      {
+        name: "TEST3",
+        desc: "{curly} value",
+        type: "patch",
+      },
+    ];
+    const result = serializeYaml(functions);
+    const parsed = yaml.load(result) as Record<string, unknown>[];
+    expect(parsed).toHaveLength(3);
+    expect(parsed[0]).toHaveProperty("desc", "# not a comment");
+    expect(parsed[1]).toHaveProperty("desc", "[bracketed] value");
+    expect(parsed[2]).toHaveProperty("desc", "{curly} value");
   });
 });
 

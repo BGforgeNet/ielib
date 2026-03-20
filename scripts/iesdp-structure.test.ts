@@ -2,8 +2,8 @@
  * Tests for IESDP structure utilities.
  */
 
-import { describe, it, expect } from "vitest";
-import { getPrefix, generateId, getFieldSize, ValidationError } from "./iesdp-structure";
+import { describe, it, expect, vi } from "vitest";
+import { getPrefix, generateId, getFieldSize, loadDatafile, ValidationError } from "./iesdp-structure";
 import type { StructureItem } from "./iesdp-structure";
 
 describe("getPrefix", () => {
@@ -81,5 +81,31 @@ describe("getFieldSize", () => {
   it("throws ValidationError for unknown type without length", () => {
     const item: StructureItem = { desc: "X", type: "unknown_type" };
     expect(() => getFieldSize(item)).toThrow(ValidationError);
+  });
+});
+
+vi.mock("./utils.js", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("./utils.js")>();
+  return { ...actual, readFile: vi.fn(actual.readFile), log: vi.fn(actual.log) };
+});
+
+describe("loadDatafile", () => {
+  it("throws ValidationError on offset mismatch", async () => {
+    const yamlContent = [
+      "- desc: First Field",
+      "  type: dword",
+      "  offset: 0",
+      "- desc: Second Field",
+      "  type: dword",
+      "  offset: 8",  // should be 4 (dword = 4 bytes), so this mismatches
+    ].join("\n");
+
+    const utils = await import("./utils.js");
+    vi.mocked(utils.readFile).mockReturnValue(yamlContent);
+
+    expect(() => loadDatafile("test.yml", "TEST_", "test_v1")).toThrow(ValidationError);
+    expect(() => loadDatafile("test.yml", "TEST_", "test_v1")).toThrow(/offset mismatch/i);
+
+    vi.mocked(utils.readFile).mockRestore();
   });
 });
