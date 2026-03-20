@@ -4,22 +4,41 @@ For use with the ChangeGender() action.
 For use with the Gender() trigger.
 */
 
+/** @type {ids} */
 OUTER_SET GENDER_male = 1
+/** @type {ids} */
 OUTER_SET GENDER_female = 2
+/** @type {ids} */
 OUTER_SET GENDER_other = 3
+/** @type {ids} */
 OUTER_SET GENDER_niether = 4
+/** @type {ids} */
 OUTER_SET GENDER_both = 5
+/** @type {ids} */
 OUTER_SET GENDER_summoned = 6
+/** @type {ids} */
 OUTER_SET GENDER_illusionary = 7
+/** @type {ids} */
 OUTER_SET GENDER_extra = 8
+/** @type {ids} */
 OUTER_SET GENDER_summoned_demon = 9
+/** @type {ids} */
 OUTER_SET GENDER_extra2 = 10
+/** @type {ids} */
 OUTER_SET GENDER_extra3 = 11
+/** @type {ids} */
 OUTER_SET GENDER_extra4 = 12
+/** @type {ids} */
 OUTER_SET GENDER_extra5 = 13
+/** @type {ids} */
 OUTER_SET GENDER_extra6 = 14
+/** @type {ids} */
 OUTER_SET GENDER_extra7 = 15
+/** @type {ids} */
 OUTER_SET GENDER_extra8 = 16
+/** @type {ids} */
 OUTER_SET GENDER_extra9 = 17
+/** @type {ids} */
 OUTER_SET GENDER_extra10 = 18
+/** @type {ids} */
 OUTER_SET GENDER_imprisoned_summoned = 66
