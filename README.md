@@ -7,11 +7,14 @@
 [__Documentation__](https://ielib.bgforge.net)
 | [__Forum__](https://forums.bgforge.net/viewforum.php?f=35)
 
-Infinity Engine library for [BGforge MLS](https://github.com/BGforgeNet/VScode-BGforge-MLS). It can be used standalone as well.
-
 ![usage example](resources/example.png)
 
-Essentially, it defines various constants: opcode numbers, icon numbers, etc, so that they could be used instead of magic numbers, improving overall code readability. (Similarly to what WeiDU [does](https://weidu.org/~thebigg/README-WeiDU.html#sec58).)
+A WeiDU library for Infinity Engine modding.
+
+IElib defines various constants: opcode numbers, icon numbers, etc, so that they could be used instead of magic numbers, improving overall code readability - similarly to what WeiDU itself [does](https://weidu.org/~thebigg/README-WeiDU.html#sec58), but on a larger scale. It also contains a collection of helper functions.
+
+IElib can be used standalone or with [BGforge MLS](https://github.com/BGforgeNet/VScode-BGforge-MLS). MLS will pick up all of IElib's define for intellisense.
+
 
 ### Usage
 
