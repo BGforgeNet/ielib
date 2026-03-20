@@ -131,8 +131,8 @@ function buildModuleMap(bg2Dir: string): Map<string, ModuleExports> {
       continue;
     }
     const sorted: ModuleExports = {
-      types: [...exports.types].sort(),
-      values: [...exports.values].sort(),
+      types: [...exports.types].toSorted(),
+      values: [...exports.values].toSorted(),
     };
     moduleMap.set(toModulePath(file), sorted);
   }
@@ -145,7 +145,7 @@ function buildModuleMap(bg2Dir: string): Map<string, ModuleExports> {
  * Groups modules by section with decorative comments.
  */
 function buildBarrelOutput(moduleMap: Map<string, ModuleExports>): string[] {
-  const sortedModules = [...moduleMap.keys()].sort((a, b) => {
+  const sortedModules = [...moduleMap.keys()].toSorted((a, b) => {
     const sd = moduleSection(a) - moduleSection(b);
     return sd !== 0 ? sd : a.localeCompare(b);
   });

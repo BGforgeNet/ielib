@@ -271,7 +271,7 @@ export function processFormatDirectories(fileFormatsDir: string, structuresDir: 
     }
 
     const items = new Map<string, StructureField>();
-    const files = fs.readdirSync(ffDir).sort();
+    const files = fs.readdirSync(ffDir).toSorted();
 
     for (const f of files) {
       // Feature blocks handled separately

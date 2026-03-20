@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
-		"lint": "eslint scripts/",
+		"lint": "oxlint scripts/",
 		"typecheck": "tsc --noEmit",
 		"iesdp-update": "bash scripts/iesdp-update.sh",
 		"test": "vitest run",
@@ -18,14 +18,12 @@
 		"yargs": "^17.7.2"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.39.4",
 		"@types/js-yaml": "^4.0.9",
 		"@types/jsdom": "^21.1.7",
 		"@types/node": "^22.19.15",
 		"@types/yargs": "^17.0.35",
-		"eslint": "^9.39.4",
+		"oxlint": "^1.56.0",
 		"typescript": "^5.9.3",
-		"typescript-eslint": "^8.57.1",
 		"vitest": "^4.1.0"
 	}
 }

@@ -139,7 +139,7 @@ function serializeParams(label: string, params: readonly YamlParam[]): string[] 
  */
 export function serializeYaml(functions: readonly YamlFunction[]): string {
   // Sort functions alphabetically by name
-  const sorted = [...functions].sort((a, b) => a.name.localeCompare(b.name));
+  const sorted = [...functions].toSorted((a, b) => a.name.localeCompare(b.name));
 
   const lines = sorted.flatMap((func) => {
     const funcLines: string[] = [`- name: ${func.name}`];
