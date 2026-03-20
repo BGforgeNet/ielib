@@ -2798,6 +2798,7 @@ OUTER_SET OPCODE_protection_from_weapons = 120
  *
  * - (EE only) [`Resource 2`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x70) and [`Resource 3`](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm#effv2_Body_0x78) (external [EFF](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm)s): item to be created is randomly chosen from resource fields `1–3` that are not empty.
  * - Applies a delayed [opcode #123](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op123) effect to remove the item (based on specified `duration`)
+ * - It sets the [item expiration time](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/cre_v1.htm#CREV1_0_Item) inventory item field, but with the same duration as the removal effect (baring rounding errors).
  */
 OUTER_SET OPCODE_create_inventory_item = 122
 
@@ -6211,6 +6212,8 @@ OUTER_SET OPCODE_remove_map_marker = 254
  * Creates the item specified by the `resource` key. The number of items created is controlled by the `Charges` field. The number of secondary charge is determined by `Parameter3`. The number of tertiary charges is determined by `Parameter4` (external [EFF](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm)s). The item is created in the Inventory, and has the `can not steal` bit set.
  *
  * The difference from [opcode #122](https://gibberlings3.github.io/iesdp/opcodes/bgee.htm#op122) is that when used in an external [EFF](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/eff_v2.htm), the `duration` (from the calling file) is specified in days.
+ *
+ * It sets the [item expiration time](https://gibberlings3.github.io/iesdp/file_formats/ie_formats/cre_v1.htm#CREV1_0_Item) inventory item field.
  */
 OUTER_SET OPCODE_create_inventory_item_days = 255
 
