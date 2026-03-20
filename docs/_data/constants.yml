@@ -1,0 +1,100 @@
+# Constant sections for documentation generation.
+# Each entry maps to one or more .tph source files that get combined into a single doc page.
+# "files" paths are relative to project root.
+
+- name: ids
+  title: IDS
+  desc: Named constants for IDS file values (animation IDs, effect IDs, gender, slots, etc.).
+  files:
+    - ids/animate_ids.tph
+    - ids/effect_ids.tph
+    - ids/gender_ids.tph
+    - ids/projectile_ids.tph
+    - ids/slots_ids.tph
+    - ids/types.tph
+
+- name: spells
+  title: Spells
+  desc: Spell resref constants by game.
+  files:
+    - ids/spell_ids_bg2ee.tph
+    - ids/spell_ids_bgee.tph
+    - ids/spell_ids_iwdee.tph
+
+- name: opcodes
+  title: Opcodes
+  desc: Named constants for opcode numbers.
+  files:
+    - misc/opcode.tph
+    - misc/opcode_ee.tph
+
+- name: opcode-params
+  title: Opcode Parameters
+  desc: Named constants for opcode parameter values.
+  files:
+    - opcodes/0_ac_modifier.tph
+    - opcodes/12_damage.tph
+    - opcodes/144_279_button_type.tph
+    - opcodes/146_cast_spell_type.tph
+    - opcodes/17_current_hp_mod_type.tph
+    - opcodes/236_project_image.tph
+    - opcodes/82_script_type.tph
+    - opcodes/mod_type.tph
+
+- name: structures
+  title: Offsets
+  desc: Named offset constants for IE file format structures (ARE, CRE, EFF, ITM, SPL, STO, etc.).
+  files:
+    - structures/are/main.tph
+    - structures/are/container_flags.tph
+    - structures/are/door_flags.tph
+    - structures/are/region_flags.tph
+    - structures/are/region_type.tph
+    - structures/cre/main.tph
+    - structures/cre/flags.tph
+    - structures/eff/main.tph
+    - structures/eff/iesdp.tph
+    - structures/eff2/main.tph
+    - structures/eff2/iesdp.tph
+    - structures/fx/main.tph
+    - structures/fx/iesdp.tph
+    - structures/fx/resist_dispel.tph
+    - structures/fx/saving_throw.tph
+    - structures/fx/target.tph
+    - structures/fx/timing.tph
+    - structures/itm/main.tph
+    - structures/itm/attack_type.tph
+    - structures/itm/damage_type.tph
+    - structures/itm/depletion.tph
+    - structures/itm/header_flags.tph
+    - structures/itm/header_target.tph
+    - structures/itm/iesdp.tph
+    - structures/spl/main.tph
+    - structures/spl/flags.tph
+    - structures/spl/iesdp.tph
+    - structures/spl/spell_form.tph
+    - structures/sto/main.tph
+    - structures/sto/flags.tph
+    - structures/sto/iesdp.tph
+    - structures/sto/item_flags.tph
+    - structures/item_types.tph
+
+- name: icons
+  title: Icons
+  desc: Portrait icon index constants.
+  files:
+    - misc/icons.tph
+
+- name: scrolls
+  title: Scrolls
+  desc: Scroll resref constants.
+  files:
+    - misc/scrolls.tph
+    - misc/scrolls_iwdee.tph
+    - misc/scrolls_protection.tph
+
+- name: misc
+  title: Miscellaneous
+  desc: Secondary type tables and other constants.
+  files:
+    - 2da/sectype.tph

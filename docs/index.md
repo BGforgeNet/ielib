@@ -17,6 +17,9 @@ hero:
       text: Functions
       link: /functions/2da
     - theme: alt
+      text: Constants
+      link: /constants/ids
+    - theme: alt
       text: Types
       link: /types
 

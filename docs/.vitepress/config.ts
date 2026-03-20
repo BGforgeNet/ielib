@@ -104,6 +104,19 @@ _paq.push(['enableLinkTracking']);
           { text: "String references", link: "/functions/strref" },
         ],
       },
+      {
+        text: "Constants",
+        items: [
+          { text: "IDS", link: "/constants/ids" },
+          { text: "Spells", link: "/constants/spells" },
+          { text: "Opcodes", link: "/constants/opcodes" },
+          { text: "Opcode Parameters", link: "/constants/opcode-params" },
+          { text: "Offsets", link: "/constants/structures" },
+          { text: "Icons", link: "/constants/icons" },
+          { text: "Scrolls", link: "/constants/scrolls" },
+          { text: "Miscellaneous", link: "/constants/misc" },
+        ],
+      },
     ],
 
     editLink: {

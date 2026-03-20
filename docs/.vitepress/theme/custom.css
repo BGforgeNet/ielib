@@ -55,10 +55,13 @@ html {
 
 /* -- Tables -- */
 .vp-doc table {
+  display: table;
   width: 100%;
   border-collapse: collapse;
   margin: 1rem 0;
   font-size: 0.9em;
+  table-layout: auto;
+  overflow-x: auto;
 }
 
 .vp-doc th {
@@ -74,8 +77,20 @@ html {
   border: 1px solid var(--vp-c-divider);
 }
 
+/* Code in table cells: allow normal word wrapping */
+.vp-doc td code {
+  white-space: normal;
+  word-break: normal;
+}
+
 .vp-doc tr:hover td {
   background-color: var(--vp-c-bg-soft);
+}
+
+/* -- Feature card links: make them visually distinct -- */
+.VPFeature a {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline;
 }
 
 /* -- Hide markdown horizontal rules (headings provide separation) -- */

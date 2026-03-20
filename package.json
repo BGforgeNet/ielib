@@ -7,8 +7,8 @@
 		"typecheck": "tsc --noEmit",
 		"iesdp-update": "bash scripts/iesdp-update.sh",
 		"test": "vitest run",
-		"build-site": "tsx scripts/jsdoc-to-md.ts && pnpm exec vitepress build docs",
-		"serve": "tsx scripts/jsdoc-to-md.ts && pnpm exec vitepress dev docs"
+		"build-site": "tsx scripts/jsdoc-to-md.ts && tsx scripts/constants-to-md.ts && pnpm exec vitepress build docs",
+		"serve": "tsx scripts/jsdoc-to-md.ts && tsx scripts/constants-to-md.ts && pnpm exec vitepress dev docs"
 	},
 	"dependencies": {
 		"gray-matter": "^4.0.3",
