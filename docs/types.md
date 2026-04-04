@@ -14,6 +14,10 @@ Array. [Simple](https://weidu.org/~thebigg/README-WeiDU.html#DEFINE_ARRAY), or [
 
 0 or 1.
 
+## bit
+
+Single-bit flag; usually used in bitwise operations.
+
 ## ids
 
 An ID symbol. A string from an existing IDS table file.

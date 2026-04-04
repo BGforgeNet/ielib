@@ -65,12 +65,28 @@ describe("getFieldSize", () => {
   });
 
   it("returns byte size for known type", () => {
+    expect(getFieldSize({ desc: "X", type: "bit" })).toBe(1);
     expect(getFieldSize({ desc: "X", type: "byte" })).toBe(1);
     expect(getFieldSize({ desc: "X", type: "char" })).toBe(1);
     expect(getFieldSize({ desc: "X", type: "word" })).toBe(2);
     expect(getFieldSize({ desc: "X", type: "dword" })).toBe(4);
     expect(getFieldSize({ desc: "X", type: "resref" })).toBe(8);
     expect(getFieldSize({ desc: "X", type: "strref" })).toBe(4);
+  });
+
+  it("accepts bit as a known type when loading structure data", async () => {
+    const yamlContent = [
+      "- desc: Flag",
+      "  type: bit",
+      "  offset: 0",
+    ].join("\n");
+
+    const utils = await import("./utils.js");
+    vi.mocked(utils.readFile).mockReturnValue(yamlContent);
+
+    expect(() => loadDatafile("test.yml", "TEST_", "test_v1")).not.toThrow();
+
+    vi.mocked(utils.readFile).mockRestore();
   });
 
   it("applies mult to known type size", () => {

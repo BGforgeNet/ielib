@@ -39,6 +39,7 @@ export class ValidationError extends Error {
 
 // Constants
 export const TYPE_SIZE_MAP: Readonly<Record<string, number>> = {
+  bit: 1,
   byte: 1,
   char: 1,
   word: 2,
@@ -48,6 +49,7 @@ export const TYPE_SIZE_MAP: Readonly<Record<string, number>> = {
 };
 
 export const KNOWN_TYPES: ReadonlySet<string> = new Set([
+  "bit",
   "byte",
   "char",
   "word",
