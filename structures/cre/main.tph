@@ -116,6 +116,19 @@ OUTER_SET CRE_global_identifier = 0x27c
 OUTER_SET CRE_local_identifier = 0x27e
 OUTER_SET CRE_script_name = 0x280
 
+OUTER_SET CRE_known_spells_offset = 0x2a0
+OUTER_SET CRE_known_spells_count = 0x2a4
+OUTER_SET CRE_memorization_info_offset = 0x2a8
+OUTER_SET CRE_memorization_info_count = 0x2ac
+OUTER_SET CRE_memorized_spells_offset = 0x2b0
+OUTER_SET CRE_memorized_spells_count = 0x2b4
+OUTER_SET CRE_item_slots_offset = 0x2b8
+OUTER_SET CRE_items_offset = 0x2bc
+OUTER_SET CRE_items_count = 0x2c0
+OUTER_SET CRE_effects_offset = 0x2c4
+OUTER_SET CRE_effects_count = 0x2c8
+OUTER_SET CRE_dialog = 0x2cc
+
 // item entry
 OUTER_SET CRE_ITEM_name = 0x0
 OUTER_SET CRE_ITEM_expiration_time = 0x8
