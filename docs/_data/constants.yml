@@ -52,6 +52,7 @@
     - structures/are/region_type.tph
     - structures/cre/main.tph
     - structures/cre/flags.tph
+    - structures/cre/item_flags.tph
     - structures/eff/main.tph
     - structures/eff/iesdp.tph
     - structures/eff2/main.tph

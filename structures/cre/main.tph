@@ -1,6 +1,7 @@
 OUTER_SPRINT BGFORGE_CRE_DIR ~%BGFORGE_STRUCTURES_DIR%/CRE~
 INCLUDE
   ~%BGFORGE_CRE_DIR%/flags.tph~
+  ~%BGFORGE_CRE_DIR%/item_flags.tph~
 
 OUTER_SET CRE_name = 0x8
 OUTER_SET CRE_tooltip = 0xc
@@ -114,3 +115,11 @@ OUTER_SET CRE_alignment = 0x27b
 OUTER_SET CRE_global_identifier = 0x27c
 OUTER_SET CRE_local_identifier = 0x27e
 OUTER_SET CRE_script_name = 0x280
+
+// item entry
+OUTER_SET CRE_ITEM_name = 0x0
+OUTER_SET CRE_ITEM_expiration_time = 0x8
+OUTER_SET CRE_ITEM_charges1 = 0xa
+OUTER_SET CRE_ITEM_charges2 = 0xc
+OUTER_SET CRE_ITEM_charges3 = 0xe
+OUTER_SET CRE_ITEM_flags = 0x10
