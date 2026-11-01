@@ -16,10 +16,10 @@ BEGIN
 END
 
 /**
- * Returns 1 if the creature has the item, 0 otherwise.
+ * Returns 1 if the creature has the item, 0 if not, -1 if the creature is not in the game.
  * @param {resref} item! - item resource
  * @param {resref} creature! - creature resource
- * @return present {bool} - does the creature possess the item?
+ * @return present {int} - does the creature possess the item?
  */
 DEFINE_ACTION_FUNCTION IS_ITEM_ON_CREATURE
   STR_VAR

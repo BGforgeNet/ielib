@@ -136,10 +136,10 @@ BEGIN
 END
 
 /**
- * Returns 1 if item is sold in the store, 0 otherwise.
+ * Returns 1 if item is somewhere in the area, 0 if not, -1 if the area is not in the game.
  * @param {resref} item! - item resource
  * @param {resref} area! - area resource
- * @return present {bool} - is item somewhere in the area?
+ * @return present {int} - is item somewhere in the area?
  */
 DEFINE_ACTION_FUNCTION IS_ITEM_IN_AREA
   STR_VAR

@@ -1,8 +1,8 @@
 /**
- * Returns 1 if item is given or created in the dialog or script, 0 otherwise.
+ * Returns 1 if item is given or created in the dialog or script, 0 if not, -1 if the file is not in the game.
  * @param {resref} item! - item resource
  * @param {filename} filename! - filename of the dialog or script
- * @return present {bool} - is item given or created in the dialog or script
+ * @return present {int} - is item given or created in the dialog or script
  */
 DEFINE_ACTION_FUNCTION IS_ITEM_GIVEN_OR_CREATED_IN_DIALOG_OR_SCRIPT
   STR_VAR
@@ -22,14 +22,19 @@ BEGIN
         OR INDEX_BUFFER (CASE_INSENSITIVE EXACT_MATCH ~TakeItemReplace("%item%"~) != "-1"
       BEGIN present = 1 END
     END
-  BUT_ONLY
+  BUT_ONLY IF_EXISTS
+  ACTION_IF NOT FILE_EXISTS_IN_GAME ~%filename%~ BEGIN
+    WARN ~IS_ITEM_GIVEN_OR_CREATED_IN_DIALOG_OR_SCRIPT: %filename% is not present in game~
+    OUTER_SET present = "-1"
+  END
 END
 
 /**
- * Returns 1 if item is present in area, store, on creature, or given/created in the dialog or script. 0 otherwise.
+ * Returns 1 if item is present in area, store, on creature, or given/created in the dialog or script, 0 if not,
+ * -1 if the resource is not in the game.
  * @param {resref} item! - item resource
  * @param {filename} resource! - filename
- * @return present {bool} - is item present?
+ * @return present {int} - is item present?
  */
 DEFINE_ACTION_FUNCTION IS_ITEM_IN_RESOURCE
   STR_VAR

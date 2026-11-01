@@ -1,8 +1,8 @@
 /**
- * Returns 1 if item is given or created in the dialog, 0 otherwise.
+ * Returns 1 if item is given or created in the dialog, 0 if not, -1 if the dialog is not in the game.
  * @param {resref} item! - item resource
  * @param {resref} dialog! - dialog resource
- * @return present {bool} - item is given or created in the dialog?
+ * @return present {int} - item is given or created in the dialog?
  */
 DEFINE_ACTION_FUNCTION IS_ITEM_GIVEN_OR_CREATED_IN_DIALOG
   STR_VAR

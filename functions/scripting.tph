@@ -47,10 +47,10 @@ BEGIN
 END
 
 /**
- * Returns 1 if item is given or created in the script, 0 otherwise.
+ * Returns 1 if item is given or created in the script, 0 if not, -1 if the script is not in the game.
  * @param {resref} item! - item resource
  * @param {resref} script! - script resource
- * @return present {bool} - is item given or created in the script?
+ * @return present {int} - is item given or created in the script?
  */
 DEFINE_ACTION_FUNCTION IS_ITEM_GIVEN_OR_CREATED_IN_SCRIPT
     STR_VAR

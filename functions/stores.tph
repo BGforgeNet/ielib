@@ -22,10 +22,10 @@ BEGIN
 END
 
 /**
- * Returns 1 if item is sold in the store, 0 otherwise.
+ * Returns 1 if item is sold in the store, 0 if not, -1 if the store is not in the game.
  * @param {resref} item! - item resource
  * @param {resref} store! - store resource
- * @return {bool} present - is item sold in the store?
+ * @return {int} present - is item sold in the store?
  */
 DEFINE_ACTION_FUNCTION IS_ITEM_IN_STORE
     STR_VAR
