@@ -31,7 +31,7 @@ END
 
 /**
  * Returns 1 if item is present in area, store, on creature, or given/created in the dialog or script, 0 if not,
- * -1 if the resource is not in the game.
+ * -1 if the resource is not in the game. Other resource types always return 0.
  * @param {resref} item! - item resource
  * @param {filename} resource! - filename
  * @return present {int} - is item present?
