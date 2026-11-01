@@ -2,6 +2,7 @@
 	"name": "ielib-dev",
 	"version": "1.0.0",
 	"type": "module",
+	"packageManager": "pnpm@12.15.0",
 	"scripts": {
 		"lint": "oxlint scripts/",
 		"typecheck": "tsc --noEmit",
@@ -12,19 +13,18 @@
 	},
 	"dependencies": {
 		"gray-matter": "^4.0.3",
-		"js-yaml": "^4.3.2",
-		"jsdom": "^29.0.1",
-		"tsx": "^4.21.0",
-		"yargs": "^18.0.0"
+		"js-yaml": "^5.5.0",
+		"jsdom": "^30.1.3",
+		"tsx": "^4.23.15",
+		"yargs": "^18.2.0"
 	},
 	"devDependencies": {
-		"@types/js-yaml": "^4.0.9",
-		"@types/jsdom": "^21.1.7",
-		"@types/node": "^22.19.15",
+		"@types/jsdom": "^30.0.0",
+		"@types/node": "^24.19.2",
 		"@types/yargs": "^17.0.35",
-		"oxlint": "^1.56.0",
-		"typescript": "^5.9.3",
+		"oxlint": "^1.89.0",
+		"typescript": "^7.0.2",
 		"vitepress": "^1.6.4",
-		"vitest": "^4.1.11"
+		"vitest": "^5.0.5"
 	}
 }

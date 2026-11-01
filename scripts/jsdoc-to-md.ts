@@ -9,13 +9,9 @@
 
 import * as fs from "fs";
 import * as path from "path";
-import { fileURLToPath } from "url";
 import * as yaml from "js-yaml";
 import { parseWeiduJsDoc, type WeiduFunction, type JsDocParam } from "./weidu-jsdoc-parser.js";
 import { readFile, log } from "./utils.js";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const KNOWN_TYPES = new Set([
   "array",
@@ -270,7 +266,7 @@ function parseTypes(content: string): TypeInfo[] {
  * Processes all .tph files and generates Markdown documentation.
  */
 function main(): void {
-  const projectRoot = path.resolve(__dirname, "..");
+  const projectRoot = path.resolve(import.meta.dirname, "..");
   const functionsDir = path.join(projectRoot, "functions");
   const docsDir = path.join(projectRoot, "docs");
   const outputDir = path.join(docsDir, "functions");

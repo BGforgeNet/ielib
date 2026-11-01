@@ -1,5 +1,12 @@
 packages:
   - "."
 
-onlyBuiltDependencies:
-  - esbuild
+allowBuilds:
+  esbuild: true
+
+# a week's cooldown on new releases (minutes)
+minimumReleaseAge: 10080
+
+# vitepress 1.x asks for vite 5, which has no patched release for its advisories; its vue plugin accepts vite 6.
+overrides:
+  vitepress>vite: 6.4.5

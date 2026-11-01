@@ -9,12 +9,8 @@
 
 import * as fs from "fs";
 import * as path from "path";
-import { fileURLToPath } from "url";
 import * as yaml from "js-yaml";
 import { readFile, log } from "./utils.js";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 interface ConstantSection {
   readonly name: string;
@@ -80,7 +76,7 @@ function parseConstantsFile(filePath: string): readonly ParsedConstant[] {
   const lines = content.split("\n");
   const constants: ParsedConstant[] = [];
   const sourceFile = path.relative(
-    path.resolve(__dirname, ".."),
+    path.resolve(import.meta.dirname, ".."),
     filePath,
   );
 
@@ -291,7 +287,7 @@ function parseSectionsYml(content: string): readonly ConstantSection[] {
 }
 
 function main(): void {
-  const projectRoot = path.resolve(__dirname, "..");
+  const projectRoot = path.resolve(import.meta.dirname, "..");
   const docsDir = path.join(projectRoot, "docs");
   const outputDir = path.join(docsDir, "constants");
   fs.mkdirSync(outputDir, { recursive: true });
