@@ -19,9 +19,14 @@ END
  * Returns 1 if the creature has the item, 0 if not, -1 if the creature is not in the game.
  * @param {resref} item! - item resource
  * @param {resref} creature! - creature resource
+ * @param {bool} log - Print the result
+ * @param {bool} warn - Warn if the creature is in the game but doesn't have the item
  * @return present {int} - does the creature possess the item?
  */
 DEFINE_ACTION_FUNCTION IS_ITEM_ON_CREATURE
+  INT_VAR
+    log = 0
+    warn = 0
   STR_VAR
     item = ~~
     creature = ~~
@@ -40,5 +45,16 @@ BEGIN
   ACTION_IF NOT FILE_EXISTS_IN_GAME ~%creature%.cre~ BEGIN
     WARN ~IS_ITEM_ON_CREATURE: creature %creature% is not present in game~
     OUTER_SET present = "-1"
+  END ELSE BEGIN
+    ACTION_IF log == 1 BEGIN
+      ACTION_IF present == 1 BEGIN
+        PRINT ~IS_ITEM_ON_CREATURE: creature %creature% has %item%~
+      END ELSE BEGIN
+        PRINT ~IS_ITEM_ON_CREATURE: creature %creature% doesn't have %item%~
+      END
+    END
+    ACTION_IF warn == 1 AND present == 0 BEGIN
+      WARN ~IS_ITEM_ON_CREATURE: creature %creature% doesn't have %item%~
+    END
   END
 END
